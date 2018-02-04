@@ -1,0 +1,24 @@
+.game-status {
+    color: red;
+    font-weight: bold;
+    font-size: .8em;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.lost{
+    color: grey;
+}
+
+.game-scores {
+    line-height: .05em;
+    border-right: 1px solid black;
+    background-color: #F7F7F7;
+    border: .5px solid #e5e3e3;
+}
+
+table {
+    border-collapse: collapse;
+}

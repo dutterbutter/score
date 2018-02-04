@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Games from '../Components/Games/Games';
 import Datepicker from '../Components/Datepicker';
-import GamesTest from '../Components/Games/Games';
+import GameTable from '../Components/Games/GameTable';
+import ScoreCard from '../Components/Games/ScoreCard';
 
 class GameData extends React.Component {
     constructor() {
@@ -16,6 +17,7 @@ class GameData extends React.Component {
     }
 
     componentDidMount() {
+
         axios.get('http://localhost:8080/')
             .then(result => {
                 this.setState({
@@ -61,17 +63,62 @@ class GameData extends React.Component {
                 winning_pitcher_last={game.winning_pitcher.last}
                 losing_pitcher_name={game.losing_pitcher.last}
                 winning_pitcher_era={game.winning_pitcher.era}
-                losing_pitcher_era={game.losing_pitcher.era} />
+                losing_pitcher_era={game.losing_pitcher.era}
+                isEmpty={this.state.isEmpty} />
         })
+
+        const glanceGames = this.state.gameData.map(game => {
+            return <GameTable
+                key={game.id}
+                home_team_name={game.home_name_abbrev}
+                away_team_name={game.away_name_abbrev}
+                home_score={game.linescore.r.home}
+                away_score={game.linescore.r.away}
+                status={game.status.status}
+            />
+        })
+
+        const scoreCard = this.state.gameData.map(game => {
+            return <ScoreCard key={game.id}
+                home_team_city={game.home_team_city}
+                home_team={game.home_team_name}
+                away_team_city={game.away_team_city}
+                away_team={game.away_team_name}
+                status={game.status.status}
+                home_score={game.linescore.r.home}
+                away_score={game.linescore.r.away}
+                innings  = {game.linescore.inning}
+                run = {game.linescore.r}
+                homer = {game.linescore.h}
+                error = {game.linescore.e}
+                home_win = {game.home_win}
+                home_loss = {game.home_loss}
+                away_win = {game.away_win}
+                away_loss = {game.away_loss}
+                venue ={game.venue}
+                />
+        })
+
 
         return (
             <div>
-                <Datepicker
-                    dateParserHandler={this.dateParserHandler} />
                 <div className="container">
-                    <div className="row">
-                        {games}
+                    <div className="left-align">
+                        <Datepicker
+                            dateParserHandler={this.dateParserHandler} />
                     </div>
+             
+                            <div>
+                                <div className="row">
+                                    <div className="left-align">Games At a Glance </div>
+                                    {glanceGames}
+                                </div>
+                                {/* <div className="row">
+                                    <p className="left-align">Full Scoreboard</p>
+                                    {games}
+                                </div> */}
+                            </div>
+                    {scoreCard}
                 </div>
             </div>
         );

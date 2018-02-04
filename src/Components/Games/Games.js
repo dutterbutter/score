@@ -4,7 +4,7 @@ import './Games.css';
 const gameDay = (props) => {
     return (
         
-                <div className="col s12 m4 l4">
+                <div className="col s12">
                     <div className="card white">
                         <div className="card-content">
                             <div className="row">
@@ -30,11 +30,13 @@ const gameDay = (props) => {
                                 <p className="center-align">W: {props.winning_pitcher_last} ({props.winning_pitcher_era})</p>
                                 <p className="center-align">L: {props.losing_pitcher_last} ({props.losing_pitcher_era})</p>
                             </div>
+                            <div className="hline-bottom"></div>
                         </div>
                     </div>
+                
                 </div>
            
-    
+                    
     )
 }
 
