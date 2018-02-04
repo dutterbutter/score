@@ -87,16 +87,16 @@ class GameData extends React.Component {
                 status={game.status.status}
                 home_score={game.linescore.r.home}
                 away_score={game.linescore.r.away}
-                innings  = {game.linescore.inning}
-                run = {game.linescore.r}
-                homer = {game.linescore.h}
-                error = {game.linescore.e}
-                home_win = {game.home_win}
-                home_loss = {game.home_loss}
-                away_win = {game.away_win}
-                away_loss = {game.away_loss}
-                venue ={game.venue}
-                />
+                innings={game.linescore.inning}
+                run={game.linescore.r}
+                homer={game.linescore.h}
+                error={game.linescore.e}
+                home_win={game.home_win}
+                home_loss={game.home_loss}
+                away_win={game.away_win}
+                away_loss={game.away_loss}
+                venue={game.venue}
+            />
         })
 
 
@@ -107,17 +107,12 @@ class GameData extends React.Component {
                         <Datepicker
                             dateParserHandler={this.dateParserHandler} />
                     </div>
-             
-                            <div>
-                                <div className="row">
-                                    <div className="left-align">Games At a Glance </div>
-                                    {glanceGames}
-                                </div>
-                                {/* <div className="row">
-                                    <p className="left-align">Full Scoreboard</p>
-                                    {games}
-                                </div> */}
-                            </div>
+                    <div>
+                        <div className="row">
+                            <div className="left-align">Games At a Glance </div>
+                            {glanceGames}
+                        </div>
+                    </div>
                     {scoreCard}
                 </div>
             </div>

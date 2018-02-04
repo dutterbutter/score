@@ -2,6 +2,7 @@ import React from 'react'
 import Venue from './Venue'
 import './ScoreCard.css';
 import BottomShelf from './BottomShelf';
+import Media from './Media';
 
 const ScoreCard = (props) => {
 
@@ -51,15 +52,18 @@ const ScoreCard = (props) => {
                         <th> {props.error.away} </th>
                     </tr>
                     <tr>
-                    <td colspan="13">
-                        <Venue
-                            venue={props.venue} />
-                    </td>
+                        <td colspan="13">
+                            <Venue
+                                venue={props.venue} />
+                        </td>
                     </tr>
                     <tr>
-                    <td>
-                        <BottomShelf />
-                    </td>
+                        <td className="bottomShelf" colspan= "6">
+                            <BottomShelf />
+                        </td>
+                        <td className="bottomShelf" colspan="7">
+                            <Media />
+                        </td>
                     </tr>
                 </tbody>
             </table>

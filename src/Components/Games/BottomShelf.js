@@ -1,15 +1,12 @@
 import React from 'react'
+import BottomShelf from './BottomShelf.css';
 
 const bottomShelf = (props) => {
     return (
         <div className="bottomShelf">
-            <div className="boxscore">
-                <i class="material-icons">developer_board</i>
+            <div className="boxicon">
+                <i class="material-icons md">developer_board</i>
                 <p className="center-align">Full Box Score</p>
-            </div>
-            <div className="media">
-                <i class="material-icons">videocam</i>
-                <p className="center-align">Media</p>
             </div>
         </div>
     )
