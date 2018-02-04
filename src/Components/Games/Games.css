@@ -1,0 +1,9 @@
+.score{
+    font-size: 2.5em;
+}
+
+.status{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: goldenrod !important;
+}
