@@ -4,7 +4,8 @@ const gameDetails = (props) => {
 
     return(
         <div>
-            
+
         </div>
     )
 }
+export default gameDetails;
