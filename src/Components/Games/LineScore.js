@@ -1,9 +1,6 @@
-import React from 'react'
-import './ScoreCard.css';
-import LineScore from './LineScore';
-import BottomCard from './BottomCard';
+import React from 'react';
 
-const ScoreCard = (props) => {
+const LineScore = (props) => {
 
     let homescore = parseInt(props.home_score, 10);
     let awayscore = parseInt(props.away_score, 10);
@@ -22,8 +19,9 @@ const ScoreCard = (props) => {
     })
 
     return (
+        <div className="container">
         <div className="card">
-            <table className="bordered">
+            <table>
                 <thead className="shaded">
                     <tr>
                         <th className="scorestatus"> {props.status} </th>
@@ -35,31 +33,25 @@ const ScoreCard = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td className={homescore > awayscore ? 'bold' : 'lost'}>{props.home_team} <br />
-                            ({props.home_win}-{props.home_loss})</td>
+                        <td className={homescore > awayscore ? 'bold' : 'lost'}>{props.home_team_city}
+                            </td>
                         {innings_score_home}
-                        <th className="shaded">{props.run.home}</th>
-                        <th> {props.homer.home}</th>
-                        <th> {props.error.home} </th>
+                        <th className="shaded">{props.home_score}</th>
+                        <th> {props.home_hits}</th>
+                        <th> {props.home_error} </th>
                     </tr>
                     <tr>
-                        <td className={awayscore > homescore ? 'bold' : 'lost'}>{props.away_team}<br />
-                            ({props.away_win}-{props.away_loss})</td>
+                        <td className={awayscore > homescore ? 'bold' : 'lost'}>{props.away_team_city}</td>
                         {innings_score_away}
-                        <th className="shaded">{props.run.away}</th>
-                        <th> {props.homer.away}</th>
-                        <th> {props.error.away} </th>
+                        <th className="shaded">{props.away_score}</th>
+                        <th> {props.away_hits}</th>
+                        <th> {props.away_hits} </th>
                     </tr>
                 </tbody>
-
-                <BottomCard
-                    venue={props.venue}
-                    game_data_directory={props.game_data_directory}
-                    detailHandler={props.detailHandler} />
             </table>
         </div>
+        </div>
     )
-
 }
 
-export default ScoreCard;
+export default LineScore

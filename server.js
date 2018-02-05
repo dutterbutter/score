@@ -9,10 +9,12 @@ const PORT    = process.env.PORT || 8080
       app.use(express.urlencoded({ extended : true }))
 
 
-let givenURL = "http://gd2.mlb.com/components/game/mlb/year_";
-let endURL   = "/master_scoreboard.json"
+let givenURL        = "http://gd2.mlb.com/components/game/mlb/year_";
+let endURL          = "/master_scoreboard.json";
+let boxScoreUrlEnd  = "/boxscore.json";
+let boxScoreUrl     = "http://gd2.mlb.com";
 
-let testURL  = "http://gd2.mlb.com/components/game/mlb/year_2016/month_08/day_04/master_scoreboard.json"
+let testURL  = "http://gd2.mlb.com/components/game/mlb/year_2016/month_08/day_04/master_scoreboard.json";
 app.get("/", (req, res) => {
     
     return axios.get(testURL)
@@ -46,6 +48,20 @@ app.get('/:date', (req, res) => {
     })
 })
 
+app.post("/game-details", (req, res) => {
+    let game_data_directory = req.body.game_data_directory;
+
+    return axios.get(boxScoreUrl + game_data_directory + boxScoreUrlEnd)
+
+    .then(response => {
+        result = response.data;
+        console.log("THIS MF WORKIN");
+        res.send(result.data);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+})
 
 app.listen(PORT, _ => {
     console.log(`Express is listening on ${PORT}, ctrl+c to kill`)

@@ -3,8 +3,8 @@ import './GameTable.css';
 
 const GameTable = (props) => {
 
-    let homescore = parseInt(props.home_score);
-    let awayscore = parseInt(props.away_score);
+    let homescore = parseInt(props.home_score, 10);
+    let awayscore = parseInt(props.away_score, 10);
 
     return (
         <div className="col s1 game-scores">
