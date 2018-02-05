@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-/* body{
-  background-image: url('../Assets/ballpark.jpeg')
-} */
+body{
+  font-family: 'Lato', sans-serif;
+}
 
 .App-header {
   background-color: #222;

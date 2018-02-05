@@ -4,7 +4,7 @@ import Datepicker from '../Components/Datepicker';
 import GameTable from '../Components/Games/GameTable';
 import ScoreCard from '../Components/Games/ScoreCard';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Details from './Details';
+import Details from '../Components/Details/Details';
 
 const gameData = (props) => {
 

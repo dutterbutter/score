@@ -1,6 +1,5 @@
 import React from 'react'
 import './ScoreCard.css';
-import LineScore from './LineScore';
 import BottomCard from './BottomCard';
 
 const ScoreCard = (props) => {

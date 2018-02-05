@@ -21,7 +21,6 @@ app.get("/", (req, res) => {
 
     .then(response => {
         result = response.data;
-        console.log("WORKED")
         res.send(result.data)
     })
     .catch(err => {
@@ -40,7 +39,6 @@ app.get('/:date', (req, res) => {
 
     .then(response => {
         result = response.data;
-        console.log("IT REALLY WORKS")
         res.send(result.data)
     })
     .catch(err => {
@@ -55,7 +53,6 @@ app.post("/game-details", (req, res) => {
 
     .then(response => {
         result = response.data;
-        console.log("THIS MF WORKIN");
         res.send(result.data);
     })
     .catch(err => {

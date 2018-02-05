@@ -3,7 +3,7 @@ import React from 'react';
 const batters_away = (props) => {
  
     const batters_names = props.batting.map((batter, index) => {
-        return <tr><td key={index}> {batter.name} </td>
+        return <tr><td key={index}> {batter.name} {batter.pos}</td>
                     <td> {batter.ab} </td>
                     <td> {batter.r} </td>
                     <td> {batter.h} </td>
@@ -20,7 +20,7 @@ const batters_away = (props) => {
 
     return (
         <div className= "col s12 m6 l6">
-           <table>
+           <table className= "striped">
                 <thead className="shaded">
                     <tr>
                         <th className="teamName"> {props.away_name} </th>

@@ -1,0 +1,15 @@
+.final-display{
+    font-size: 2.5em;
+    color: darkgrey;
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
+.date{
+    font-size: 1em;
+    color: darkgrey;
+}
+
+#score-display{
+    margin-bottom: 0;
+}

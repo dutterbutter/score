@@ -50,6 +50,7 @@ const LineScore = (props) => {
                 </tbody>
             </table>
         </div>
+        
         </div>
     )
 }

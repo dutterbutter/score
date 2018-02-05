@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
 import GameData from './GameData';
-import Details from './Details'
+import Details from '../Components/Details/Details'
 import axios from 'axios';
 
 class App extends React.Component {
