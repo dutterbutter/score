@@ -1,8 +1,12 @@
 import React from 'react';
 import FinalScoreDisplay from './FinalScoreDisplay.css';
 
-const scoreDisplay = (props) => {
+//Should crate a function that takes care of splitting the teams name down
+//Priority M
 
+//This shows the score, team names, and date on details UI page
+
+const scoreDisplay = (props) => {
     
     let home_fname = String(props.home_team_city).split(" ");
     let homeFanName = home_fname[home_fname.length -1];

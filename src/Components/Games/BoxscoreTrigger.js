@@ -1,11 +1,11 @@
 import React from 'react'
-import BottomShelf from './BottomShelf.css';
+import BoxscoreTrigger from './BoxscoreTrigger.css';
 import { Link } from 'react-router-dom';
 
-const bottomShelf = (props) => {
+const boxscoreTrigger = (props) => {
     
     return (
-        <div className="bottomShelf" onClick={() => props.detailHandler(props.game_data_directory)}>
+        <div className="boxscore" onClick={() => props.detailHandler(props.game_data_directory)}>
             <Link to="/game-details">
                 <div className="boxicon">
                     <i className="material-icons md">developer_board</i>
@@ -16,7 +16,4 @@ const bottomShelf = (props) => {
     )
 }
 
-export default bottomShelf;
-
-
-//
+export default boxscoreTrigger;

@@ -2,11 +2,15 @@ import React from 'react'
 import './ScoreCard.css';
 import BottomCard from './BottomCard';
 
+//Should create single component as I do same thing for Linescore and ScoreCard
+//Need to optimize
+
 const ScoreCard = (props) => {
 
     let homescore = parseInt(props.home_score, 10);
     let awayscore = parseInt(props.away_score, 10);
 
+    //INNINGS FOR GAME
     const innings_played = props.innings.map((inning, index) => {
         return <th key={index}>{index + 1}</th>
     })
@@ -19,10 +23,11 @@ const ScoreCard = (props) => {
     const innings_score_away = props.innings.map((inning, index) => {
         return <th key={index}>{inning.away}</th>
     })
+    
 
     return (
         <div className="card">
-            <table className="bordered">
+            <table className="bordered" id="mainTable">
                 <thead className="shaded">
                     <tr>
                         <th className="scorestatus"> {props.status} </th>
@@ -54,7 +59,11 @@ const ScoreCard = (props) => {
                 <BottomCard
                     venue={props.venue}
                     game_data_directory={props.game_data_directory}
-                    detailHandler={props.detailHandler} />
+                    detailHandler={props.detailHandler}
+                    winning_pitcher_last= {props.winning_pitcher_last} 
+                    winning_pitcher_era={props.winning_pitcher_era}
+                    losing_pitcher_last={props.losing_pitcher_last}
+                    losing_pitcher_era={props.losing_pitcher_era}/>
             </table>
         </div>
     )
