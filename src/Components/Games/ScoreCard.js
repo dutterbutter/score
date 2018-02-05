@@ -3,6 +3,7 @@ import './ScoreCard.css';
 import BottomCard from './BottomCard';
 
 //Should create single component as I do same thing for Linescore and ScoreCard
+//PROPS is passed from GameData
 //Need to optimize
 
 const ScoreCard = (props) => {
@@ -59,11 +60,12 @@ const ScoreCard = (props) => {
                 <BottomCard
                     venue={props.venue}
                     game_data_directory={props.game_data_directory}
-                    detailHandler={props.detailHandler}
-                    winning_pitcher_last= {props.winning_pitcher_last} 
-                    winning_pitcher_era={props.winning_pitcher_era}
-                    losing_pitcher_last={props.losing_pitcher_last}
-                    losing_pitcher_era={props.losing_pitcher_era}/>
+                    detailHandler={props.detailHandler}       
+                    losing_pitcher = {props.losing_pitcher}
+                    winning_pitcher = {props.winning_pitcher}
+                    links = {props.links}
+                    media = {props.media}
+                    />
             </table>
         </div>
     )

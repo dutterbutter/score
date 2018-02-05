@@ -1,8 +1,7 @@
 .venue{
-    padding-left: 5px;
-    padding-top: 10px;
     text-align: left;
-    height: 35px;
+    height: 60px;
     color: grey;
-    font-size: 1em;
+    font-size: .8em;
+    line-height: 10px;
 }

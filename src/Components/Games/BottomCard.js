@@ -17,7 +17,9 @@ const bottomCard = (props) => {
             <tr>
                 <td colSpan='13'>
                     <Venue
-                        venue={props.venue} />
+                        venue={props.venue}
+                        losing_pitcher = {props.losing_pitcher}
+                        winning_pitcher = {props.winning_pitcher} />
                 </td>
             </tr>
             <tr>
@@ -26,8 +28,10 @@ const bottomCard = (props) => {
                         game_data_directory={props.game_data_directory}
                         detailHandler={props.detailHandler} />
                 </td>
-                <td className="media" colSpan="7">
-                    <Media />
+                <td className="boxscore" colSpan="7">
+                    <Media
+                        links = {props.links}
+                        media = {props.media} />
                 </td>
             </tr>
         </tbody>

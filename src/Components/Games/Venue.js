@@ -6,8 +6,8 @@ import Venue from './Venue.css'
 const venue = (props) => {
     return (
         <div className="venue">
-            {/* <p className="center-align">W: {props.winning_pitcher_last} ({props.winning_pitcher_era})</p>
-            <p className="center-align">L: {props.losing_pitcher_last} ({props.losing_pitcher_era})</p> */}
+            <p className="left-align">W: {props.winning_pitcher.last} ({props.winning_pitcher.era})</p>
+            <p className="left-align">L: {props.losing_pitcher.last} ({props.losing_pitcher.era})</p>
             At {props.venue}
         </div>
     )

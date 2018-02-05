@@ -13,11 +13,10 @@ let givenURL        = "http://gd2.mlb.com/components/game/mlb/year_";
 let endURL          = "/master_scoreboard.json";
 let boxScoreUrlEnd  = "/boxscore.json";
 let boxScoreUrl     = "http://gd2.mlb.com";
+let setURL          = "http://gd2.mlb.com/components/game/mlb/year_2017/month_09/day_29/master_scoreboard.json";
 
-let testURL  = "http://gd2.mlb.com/components/game/mlb/year_2016/month_08/day_04/master_scoreboard.json";
 app.get("/", (req, res) => {
-    
-    return axios.get(testURL)
+    return axios.get(setURL)
 
     .then(response => {
         result = response.data;

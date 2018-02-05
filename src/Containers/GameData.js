@@ -35,6 +35,10 @@ const gameData = (props) => {
             home_loss={game.home_loss}
             away_win={game.away_win}
             away_loss={game.away_loss}
+            losing_pitcher = {game.losing_pitcher}
+            winning_pitcher = {game.winning_pitcher}
+            links = {game.links}
+            media = {game.media}
             venue={game.venue}
             game_data_directory={game.game_data_directory}
             detailHandler={props.detailHandler}

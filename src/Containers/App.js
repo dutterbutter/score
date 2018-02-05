@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
-import './App.css';
-import GameData from './GameData';
-import Details from '../Components/Details/Details'
 import axios from 'axios';
+import './App.css';
+import GameData from './GameData';  
+import Details from '../Components/Details/Details'
+import MediaCoverage from '../Components/MediaCoverage/MediaCoverage';
 
 class App extends React.Component {
     constructor() {
@@ -87,6 +88,12 @@ class App extends React.Component {
                             match={match}
                             detailData={this.state.detailsData}
                             innings={this.state.detailsData.linescore}/>} 
+                            />
+
+                    <Route path='/game-media' render={({ match }) =>
+                        <MediaCoverage
+                            match={match}
+                            gameData={this.state.gameData}/>} 
                             />
                 </div>
             </BrowserRouter>

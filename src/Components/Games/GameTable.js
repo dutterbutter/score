@@ -7,7 +7,7 @@ const GameTable = (props) => {
     let awayscore = parseInt(props.away_score, 10);
 
     return (
-        <div className="col s1 game-scores">
+        <div className="card col s1 game-scores hide-on-med-and-down">
             <table className="responsive-table">
                 <thead>
                     <tr>
